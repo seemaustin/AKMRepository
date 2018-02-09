@@ -1,29 +1,29 @@
+/**
+* @ProgramName: Program-1
+* @Author: Arshia Clare 
+* @Description: 
+* This program reads in images stored as rgb values in a space delimited file format. There are functions that let the user manipulate the image to flip vertically and horizontally, and turn the image to grayscale.
+* @Course: 1063 Data Structures
+* @Semester: Spring 2017
+* @Date: 09 02 2018 
+*/
 
- @ProgramName: Program-1
- @Author: Arshia Clare 
- @Description: 
- This program reads in images stored as rgb values in a space delimited file format. There are functions that let the user manipulate the image to flip vertically and horizontally, and turn the image to grayscale.
- @Course: 1063 Data Structures
- @Semester: Spring 2017
- @Date: 09 02 2018 
-
-
-
- TXT Image Manipulation Starter
- 
- This code is a simple way to read in color information stored in a space
- delimited txt format. The expected file format is:
-                ---------------------------
-                | width height            |
-                | R G B R G B R G B R G B |
-                | R G B R G B R G B R G B |
-                | R G B R G B R G B R G B |
-                | R G B R G B R G B R G B |
-                | R G B R G B R G B R G B |
-                | R G B R G B R G B R G B |
-                ---------------------------
- So a 10x10 img would have 11 total rows, 10 rows of data, with 30 values in row.
-
+/**
+* TXT Image Manipulation Starter
+* 
+* This code is a simple way to read in color information stored in a space
+* delimited txt format. The expected file format is:
+*                ---------------------------
+*                | width height            |
+*                | R G B R G B R G B R G B |
+*                | R G B R G B R G B R G B |
+*                | R G B R G B R G B R G B |
+*                | R G B R G B R G B R G B |
+*                | R G B R G B R G B R G B |
+*                | R G B R G B R G B R G B |
+*                ---------------------------
+* So a 10x10 img would have 11 total rows, 10 rows of data, with 30 values in row.
+*/
 
 #include<iostream>
 #include<fstream>
@@ -31,25 +31,26 @@
 
 using namespace std;
 
+/**
 Structure to hold an rgb value
-
+*/
 struct rgb{
     int r;
     int g;
     int b;
 };
 
-
- @FunctionName: grayScale
- @Description: 
-     Loops through a 2D array and turns every RGB value into its grayscale equivalent.
- @Params:
-    rgb** image - 2D array holding rgb values
-    int width - width of image
-    int height - height of image
- @Returns:
-    void
-
+/**
+* @FunctionName: grayScale
+* @Description: 
+*     Loops through a 2D array and turns every RGB value into its grayscale equivalent.
+* @Params:
+*    rgb** image - 2D array holding rgb values
+*    int width - width of image
+*    int height - height of image
+* @Returns:
+*    void
+*/
 void grayScale(rgb** image,int width,int height){
     int r,g,b,gray;
     for(int i=0;i<height;i++){
@@ -67,17 +68,17 @@ void grayScale(rgb** image,int width,int height){
     }
 }
 
-
- @FunctionName: flipVert
- @Description: 
-     Loops through a 2D array and flips an image vertically as if you were folding the image in half from top to bottom or bottom to top.
- @Params:
-    rgb** image - 2D array holding rgb values
-    int width - width of image
-    int height - height of image
- @Returns:
-    void
-
+/**
+* @FunctionName: flipVert
+* @Description: 
+*     Loops through a 2D array and flips an image vertically as if you were folding the image in half from top to bottom or bottom to top.
+* @Params:
+*    rgb** image - 2D array holding rgb values
+*    int width - width of image
+*    int height - height of image
+* @Returns:
+*    void
+*/
 void flipVert(rgb** image,int width,int height)
 {
   int i, k , j;
@@ -97,17 +98,17 @@ void flipVert(rgb** image,int width,int height)
     }
 }
 
-
- @FunctionName: flipHorz
- @Description: 
-     Loops through a 2D array and flips an image horizontally as if you were folding the image in half from left to right or vice to versa.
- @Params:
-    rgb** image - 2D array holding rgb values
-    int width - width of image
-    int height - height of image
- @Returns:
-    void
-
+/**
+* @FunctionName: flipHorz
+* @Description: 
+*     Loops through a 2D array and flips an image horizontally as if you were folding the image in half from left to right or vice to versa.
+* @Params:
+*    rgb** image - 2D array holding rgb values
+*    int width - width of image
+*    int height - height of image
+* @Returns:
+*    void
+*/
 void flipHorz(rgb** image,int width,int height)
 {
   int g, k, j;
